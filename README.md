@@ -23,12 +23,12 @@ Für die Bild-Erkennungskomponente haben wir den Watson Visual-Recognition Servi
 Ein kurzes Tutorial sowie notwendige Links um beginnen zu können findest du direkt auf der offiziellen [IBM Homepage zum VR-Service](https://www.ibm.com/watson/services/visual-recognition/).
 
 ### Das Frontend
-Da wir unsere Frontend-Komponenten mit Angular entwickeln haben wir auch diese Demo als Angular-Applikation entwickelt. Hierbei orientieren wir uns an den Best-Practices von Google (Google entwickelt das Angular-Framework).
+Da wir unsere Frontend-Komponenten mit Angular entwickeln haben wir auch diese Demo als [Angular-Applikation](https://github.com/wdsgithub/cit-at-work-2017/tree/master/frontend) entwickelt. Hierbei orientieren wir uns an den Best-Practices von Google (Google entwickelt das Angular-Framework).
 
 Für die Anbindung des Backends schreiben wir die Components in Typescript. Der Typescript Code transipiliert schlussendlich zu JavaScript. Der große Vorteil von TypeScript ist, dass man typisiert entwickeln kann und somit vorab Typ-Inkompatibilitäten vermeiden kann.
 
 ### Das Backend
-Wir sind leidenschaftliche Java Entwickler. In der WDS wird Java seit knapp 20 Jahren bereits entwickelt, entsprechend halten wir uns auch bezüglich Java immer am neuesten Stand. Das Backend der Applikation und die tatsächliche Kommunikation mit der Watson-AI erfolgt in Java. 
+Wir sind leidenschaftliche Java Entwickler. In der WDS wird Java seit knapp 20 Jahren bereits entwickelt, entsprechend halten wir uns auch bezüglich Java immer am neuesten Stand. Das [Backend](https://github.com/wdsgithub/cit-at-work-2017/tree/master/backend) der Applikation und die tatsächliche Kommunikation mit der Watson-AI erfolgt in Java. 
 
 Die Applikation selbst ist eine Spring-Boot-Webapplikation, welche REST-Services zur Verfügung stellt, die wiederum die Anfragen aus dem Frontend an Watson weiterleiten. 
 Die App ist sowohl als eigenständige Spring-Boot App ausführbar (Fat-/ Ueber-JAR), was sich ausgezeichnet für lokale Tests anbietet. Zusätzlich ist es möglich, die Applikation als WAR-File auf einem Servlet-Container zu betreiben. Das Build der Java-App erfolgt über Maven.

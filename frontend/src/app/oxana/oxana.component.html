@@ -1,0 +1,27 @@
+<form>
+    <div class="chat-container">
+        <h2>Wüstenrot Info-Chat</h2>
+        <p class="demo-explanation">
+            Hier kannst du mehr darüber erfahren wer wir sind und was wir machen. <i class="em em-rocket"></i><br>
+            Frag unseren Chatbot.
+        </p>
+
+        <div #chatWindow class="messages">
+            <div class="message-container" *ngFor="let message of messages" [ngClass]="{'request': message.messageType === 'request'}">
+                <message-bubble [userName]="message.userName" [message]="message.text" [isUserMessage]="message.messageType === 'request'"></message-bubble>
+            </div>
+
+            <div class="message-container typing">
+                <message-bubble *ngIf="sviboIsTyping" message="..."></message-bubble>
+            </div>
+        </div>
+
+        <div class="input-bar">
+            <mat-form-field>
+                <input matInput placeholder="Type here..." [(ngModel)]="question" name="question" id="question" autocomplete="off">
+            </mat-form-field>
+            <button mat-raised-button color="primary" (click)="askQuestion()" [disabled]="!question">Send</button>
+            <button mat-raised-button (click)="startNewConversation()">Restart</button>
+        </div>
+    </div>
+</form>

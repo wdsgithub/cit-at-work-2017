@@ -1,0 +1,29 @@
+<mat-dialog-content>
+    <div>
+        <div class="member-image">
+            <img src="assets/team-members/{{name | lowercase}}.jpg" [alt]="name">
+        </div>
+        <div class="member-info">
+            <h3>{{name}}</h3>
+            <span class="sub-headline">Wüstenrot Datenservice GmbH</span>
+        </div>
+    </div>
+
+    <div class="desktop-only">
+        <p>Scanne diesen QR-Code um mit uns in Kontakt zu treten.</p>
+
+        <img class="qr-code" src="assets/team-members/{{name | lowercase}}-qr.jpg" alt="vCard {{name}}">
+    </div>
+
+    <div class="mobile-only">
+        <p>Schreib uns ein Mail oder lade direkt die vCard herunter, um mit uns in Kontakt zu treten.</p>
+        <ul>
+            <li><i class="em em-envelope"></i><a href="mailto:{{mail}}">{{mail}}</a></li>
+            <li><i class="em em-bust_in_silhouette"></i><a href="assets/team-members/{{name | lowercase}}-vcard.vcf">Download vCard</a></li>
+        </ul>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-raised-button (click)="closeDialog()">OK</button>
+</mat-dialog-actions>

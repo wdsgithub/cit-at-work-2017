@@ -1,0 +1,16 @@
+<h3 mat-dialog-title>Praktikumsstelle</h3>
+
+<mat-dialog-content>
+    <div class="content">
+        <p>Wenn du dich für ein Praktikum bei uns bewerben möchtest, frag am Besten einen Mitarbeiter am Stand oder
+            schicke uns deine Bewerbung einfach an
+            <span class="mail"><i class="em em-envelope"></i> xxx</span>.
+        </p>
+
+        <img src="assets/praktikum/{{praktikumImage | lowercase}}.jpg" alt="Praktikumsbeschreibung">
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-raised-button (click)="closeDialog()">OK</button>
+</mat-dialog-actions>

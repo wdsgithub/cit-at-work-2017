@@ -1,0 +1,50 @@
+<form>
+    <div class="container">
+        <h2>Visual Recognition Demo</h2>
+        <p class="demo-explanation">
+            Kannst du einen kleinen Blech- von einem Totalschaden unterscheiden?<br>
+            Oder eine Villa von einem Einfamilienhaus? <br><br>
+
+            Gut, wir auch. Probier's aus! <i class="em em-sunglasses"></i>
+        </p>
+
+        <div class="content">
+            <div class="webcam-wrapper">
+                <h3>1. Take A Snapshot</h3>
+                <p *ngIf="cameraError"><i class="em em-no_entry_sign"></i> Kein Zugriff auf die Kamera. Bitte erlaube den Zugriff in deinen Einstellungen.</p>
+                <p *ngIf="cameraError">
+                    Name: {{cameraError.name}}<br>
+                    Message: {{cameraError.message}}<br>
+                    Constraint: {{cameraError.constraintName}}
+                </p>
+                <video #video width="640" height="480" autoplay muted playsinline></video>
+                <canvas #canvas width="640" height="480"></canvas>
+
+                <p class="hint">
+                    Positioniere das Motiv möglichst nah an der Kamera, um ein optimales Ergebnis zu erzielen.
+                </p>
+
+                <button mat-raised-button color="primary" (click)="analyzeSnapshot()" [disabled]="cameraError">Analyze! <i class="em em-fire"></i></button>
+            </div>
+
+            <div class="snapshots-wrapper">
+                <h3>2. Watch Analysis</h3>
+                <div class="classification" *ngFor="let classification of recentClassifications">
+                    <img [src]="classification.imageDataUrl">
+                    <div class="classification-result" *ngIf="!classification.loading">
+                        <h5>Result</h5>
+                        <ul>
+                            <li *ngFor="let imageClass of classification.classes">
+                                <i class="em em-{{getEmoji(imageClass)}}"></i> {{imageClass.className}} ({{imageClass.score * 100 | number:'1.0-2'}}%)
+                            </li>
+                        </ul>
+                        <span *ngIf="!classification.classes" class="no-matches">No Matches <i class="em em-astonished"></i></span>
+                    </div>
+                    <div class="loading-spinner" *ngIf="classification.loading">
+                        <loading-spinner></loading-spinner>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

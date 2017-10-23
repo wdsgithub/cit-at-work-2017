@@ -1,0 +1,36 @@
+div:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+
+    .text {
+        text-decoration: underline;
+    }
+}
+
+img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: bottom;
+    border: 1px solid #8b9298;
+}
+
+.member-text {
+    display: inline-block;
+    text-align: left;
+    width: calc(100% - 65px);
+}
+
+.text {
+    display: block;
+    font-weight: bold;
+
+    @media only screen and (max-width: 900px) {
+        text-decoration: underline;
+    }
+}
+
+.mail {
+    font-size: 0.8em;
+}

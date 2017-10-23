@@ -1,0 +1,8 @@
+<div class="message" [ngClass]="{'user-message': isUserMessage}" [@fadeInOut]>
+    <span class="username" *ngIf="userName">{{userName}}</span>
+    <span class="text" *ngIf="!isLink(message) && !isPraktikum(message)">{{message}}</span>
+    <a *ngIf="isLink(message)" href="{{message}}" target="_blank">{{message}}</a>
+    <span class="text" *ngIf="isPraktikum(message)">
+        Details findest du <a href="javascript:void(0);" (click)="openPraktikumDialog(message);">hier</a>.
+    </span>
+</div>

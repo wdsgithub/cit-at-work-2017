@@ -39,12 +39,12 @@ Eine Anleitung, wie das funktioniert, stellt IBM selbst [hier](https://www.ibm.c
 
 ## Let's get started...
 Zuerst brauchst du einen BlueMix-Account sowie die notwendigen Watson-Services. Hast du keinen, kannst du bei IBM einen Account gratis erstellen.
-Alternativ kannst du auch unsere freien Services nutzen, die Keys und Credentials sind in der Applikation hinterlegt. Bitte bedenke, dass die API Keys befristet sind und somit nur eine gewisse Zeit funktionieren.
 
-Einfach git clone TODO: URL
+Einfach git clone https://github.com/wdsgithub/cit-at-work-2017
 
-Den eigenen API-Key eintragen
+In den Frontend-Folder wechseln und npm install und ng serve durchführen (Node-Installation ist Voraussetzung!).
 
+Danach in der Java-App den eigenen API-Key eintragen.
 Dann die Spring-Boot-Main-Class ausführen und App aufrufen: http://localhost:8080
 
 Viel Spaß & Happy Coding! :sunglasses:
@@ -52,4 +52,3 @@ Viel Spaß & Happy Coding! :sunglasses:
 ## Maintainer
 * Sebastian Schlote, Wüstenrot Datenservice GmbH
 * Ivan Jovic, Wüstenrot Datenservice GmbH
-
